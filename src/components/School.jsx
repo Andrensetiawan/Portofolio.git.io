@@ -4,7 +4,7 @@ import SD from '../assets/Sekolah/LOGOSDN1.png'
 import SMP from '../assets/Sekolah/LOGOSMPN3.png'
 import RIse from '../assets/Sekolah/hari senin.png'
 import { Link } from 'react-scroll'
-
+import UNPAM from '../components/school/Unpam'
 
 
 function School() {
@@ -31,10 +31,11 @@ function School() {
                 <p className='my-4'>SMK Nurul Islam Larangan</p>
             </div>
             <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                <img className=' w-80 mx-auto' src={Unpam} alt="unpam" />
-                <Link to='../components/unpam/Unpam.jsx'></Link>
-                <p className='my-4'>Universita Pamulang</p>
-            </div>
+            <Link to={UNPAM}>
+              <img className=' w-80 mx-auto' src={Unpam} alt="unpam" />
+              <p className='my-4'>Universita Pamulang</p>
+            </Link>
+          </div>
             <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
                 <img className=' w-80 mx-auto' src={RIse} alt="unpam" />
                 <Link to='/'></Link>
