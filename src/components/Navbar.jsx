@@ -9,46 +9,46 @@ import {
 } from 'react-icons/fa'
 import Logo from '../assets/firebase.png'
 import { Link } from 'react-scroll';
+import { NavLink } from 'react-router-dom';
 const Navbar = () => {
     const [nav,setNav] = useState(false)
     const handleClick = () => setNav(!nav)
 
 
-  return (
+return (
     <div className="fixed top-0 w-full h-[80px] flex justify-between items-center px-3 text-2xl bg-[#0a192f] text-gray-300 transition-all duration-300 ease-in-out z-50">
-         
         <div>
-            <Link  to='home' smooth={true} duration={500}>
+            <NavLink  to='/' smooth={true} duration={500}>
             <img src={Logo} alt='logo' style={{width: '80px'}}/>
-            </Link>
+            </NavLink>
         </div>
         {/* Meenu */}
         <div className='object-cover object-top'>
             <ul className='hidden md:flex'>
                 <li >
-                    <Link  to='home' smooth={true} duration={500}>
-                       Home
-                    </Link>
+                    <NavLink  to='/' smooth={true} duration={500}>
+                    Home
+                    </NavLink>
                 </li>
                 <li>
-                    <Link  to='about' smooth={true} duration={500}>
-                       About
-                    </Link>   
+                    <NavLink  to='/About' smooth={true} duration={500}>
+                    About
+                    </NavLink>   
                 </li>
                 <li>
-                    <Link  to='skills' smooth={true} duration={500}>
+                    <NavLink  to='/Skills' smooth={true} duration={500}>
                         Skills
-                    </Link>
+                    </NavLink>
                 </li>
                 <li>
-                    <Link  to='school' smooth={true} duration={500}>
+                    <NavLink to='/School' smooth={true} duration={500}>
                         School
-                    </Link>
+                    </NavLink>
                 </li>
                 <li>
-                    <Link  to='contact' smooth={true} duration={500}>
+                    <NavLink  to='/Contact' smooth={true} duration={500}>
                     Contact
-                    </Link>
+                    </NavLink>
                 </li>
             </ul>
         </div>
@@ -59,16 +59,16 @@ const Navbar = () => {
         </div>
 
         {/* mobile menu */}
-             <ul className={!nav ? 'hidden' : 'fixed text-right top-0 left-0 w-full h-full bg-[#0a192f] flex flex-col justify-center items-center z-40 transition-transform duration-300 ease-in-out transform translate-x-0 '}>
+            <ul className={!nav ? 'hidden' : 'fixed text-right top-0 left-0 w-full h-full bg-[#0a192f] flex flex-col justify-center items-center z-40 transition-transform duration-300 ease-in-out transform translate-x-0 '}>
                 
                 <li className='py-6 text-4xl'>
                     <Link onClick={handleClick} to='home' smooth={true} duration={500}>
-                       Home
+                    Home
                     </Link>
                 </li>
                 <li className='py-6 text-4xl'>
                     <Link onClick={handleClick} to='about' smooth={true} duration={500}>
-                       About
+                    About
                     </Link>
                 </li>
                 <li className='py-6 text-4xl'>
@@ -77,7 +77,7 @@ const Navbar = () => {
                     </Link>
                 </li>
                 <li className='py-6 text-4xl'>
-                     <Link onClick={handleClick} to='school' smooth={true} duration={500}>
+                    <Link onClick={handleClick} to='School' smooth={true} duration={500}>
                         School
                     </Link>
                 </li>
@@ -113,26 +113,18 @@ const Navbar = () => {
                     </a>
                 </li>
                 <li className='w-[187px] h-[60px] flex justify-between items-center ml-[-127px] hover:ml-[-10px] duration-300 bg-[#242930]'>
-                     <a
-                     className='flex justify-between items-center w-full text-gray-300'
-                     href='https://www.instagram.com/andrensetiawan/?hl=en'>
-                          Instagram <FaInstagram size={30} />
-                   </a>
+                    <a className='flex justify-between items-center w-full text-gray-300'
+                        href='https://www.instagram.com/andrensetiawan/?hl=en'>
+                        Instagram <FaInstagram size={30} />
+                    </a>
                 </li>
                 
                 
                 
             </ul>
-
         </div>
-   
-
-
     </div>
-
- 
-   
-  )
-}
+)
+};
 
 export default Navbar
